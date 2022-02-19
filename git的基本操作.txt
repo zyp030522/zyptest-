@@ -1,0 +1,129 @@
+gittud 密码 Zyp13753371813
+
+配置用户信息
+git config --global user.name "zypitheima"
+git config --global user.meail "2659912810@qq.com"
+
+查看所有的全局配置项
+git config --list --global
+
+查看指定的全局配置项
+git config user.name
+git config user.meail
+
+要想打开git config命令帮助手册
+git help config
+
+git init 命令将当前的目录转化为git仓库
+
+git status 查看文件处在什么状态
+
+git add 开始跟踪一个文件
+
+新添加到暂存区的文件前面有一个绿色A标记
+
+提交跟新命令
+git commit -m "提交更新" 
+
+修改过的没有放入暂存区的文件前面有红色的M标记
+
+暂存已修改的文件  可以把已经跟踪的 且已修改的文件放到暂存区
+git add
+
+向暂存区一次性添加多个文件 用 git add.
+
+从暂存区中移除文件
+git reaet HEAD 要移除文件的名称
+
+git 提供了一个跳过使用暂存区的方法  只要在提交的时候 给git commit 加上-a 选项 
+git 就会把已经跟踪的文件暂存起来一并提交 从而跳过 git add 步骤
+git commit -a -m "提交描述的消息"
+
+git 仓库移除文件的方法 两种
+1. 从git仓库和工作区同时移除指定的文件
+git rm -f 要移除的文件名
+2. 只移除git仓库的文件 保留工作区的文件
+git rm --cached 要移除的文件名
+
+
+**忽略文件操作
+1. 以#开头的时注释
+2. 以/结尾的时目录
+3. 以/开头防止递归
+4. 以!开头是取反
+5. 可以使用glob模式进行文件和文件夹的匹配
+
+**glob 模式 的基本操作
+1. 星号*匹配多个和零个任意字符
+2. [abc]匹配任意一个列在方括号中的字符
+3. 问好？只匹配一个任意字符
+4. 在方括号中使用短划线分割两个字符 ，表示所在这两个字符之内都可以匹配
+5. 两个星号**表示匹配任意中间的目录
+
+
+将远程仓库克隆到本地命令
+git clone 远程仓库的地址
+
+
+-------------------------------------------
+
+
+git 分支操作
+
+查看分支列表
+git branch
+分支前面的*表示当前所处的分支
+
+创建新的分支
+git branch 分支名称
+
+切换分支操作命令
+git checkout 分支名称
+
+分支快速创建和切换
+git checkout -b 分支名称
+-b 表示创建一个分支
+checkout 表示切换到刚才创建的分支上
+
+合并分支    注意 **合并分支时要先切换到主分支上才可以进行
+git merge 要合并到主分支的分支名称
+
+删除分支   注意如果删除的分支还没有合并到主分支上时 会报错 提示强行删除的方式 git branch -D 
+git branch -d 分支名称
+
+遇到冲突时的分支合并   需要手动解决冲突
+冲突情况提示代码
+CONFLICT (content): Merge conflict in index.js
+Automatic merge failed; fix conflicts and then commit the result.
+解决方法：打开包含冲突的文件 手动解决冲突后  再执行下面的操作
+git add .
+git comit -m "解决了分支合并冲突的问题"
+
+将本地分支推送到远程仓库
+git push -u origin 本地分支的名称:远程分支名称
+实际案例
+git push -u origin payment:pay
+如果希望远程分支和本地分支的名称保持一致可以简化
+git push -u origin payment
+注意：第一次将本地分支推送到远程分支 需要带-u 参数 
+          此后可以直接使用git push 推送代码到远程分支
+
+查看远程仓库中所有的分支列表
+git remote show 远程仓库名称
+
+跟踪分支  从远程仓库中 分支下载到本地仓库中
+从远程仓库中 把对应的远程分支下载到本地仓库中 保持本地分支和远程分支的名称一致
+git checkout 远程分支的名称
+示例  git checked pay
+从远程仓库中 把对应的远程分支下载到本地仓库中 并把下载的本地分支进行重命名
+git checkout -b 本地分支名称 远程仓库名称/远程分支名称
+示例 git checkout -b payment origin/pay
+
+拉去远程分支的最新代码
+从远程仓库 拉去当前分支的最新代码 保持当前分支代码和远程分支代码一致
+git pull
+
+删除远程分支
+删除远程仓库中指定名称的远程分支
+git push 远程仓库名称 --delete 远程分支名称
+示例   git push origin --delete pay

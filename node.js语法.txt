@@ -1,0 +1,13 @@
+__dirname 表示当前文件所处的目录
+
+path路径模块  
+导入path路径模块   const path = require('path')
+path.join() 方法 用来将多个路径段拼接成一个完整的路径字符串
+
+path.basename() 方法  用来从路径字符串中将文件名解析出来
+
+path.basename()方法 第二个参数放入文件的后缀名可以打印出去除文件后缀名的文件名称
+const fpath = '/c/x/z/index.html'
+path.basename(fpath,'.html')
+path.extname() 方法 获取文件中的扩展名 就是获取后缀名
+path.extname(fpath)  //输出结果为 .html

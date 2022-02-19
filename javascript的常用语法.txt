@@ -1,0 +1,18 @@
+join()  常用来给数组每个元素之间加分隔符号
+const elements = ['Fire', 'Air', 'Water'];
+
+console.log(elements.join());
+// expected output: "Fire,Air,Water"
+
+console.log(elements.join(''));
+// expected output: "FireAirWater"
+
+console.log(elements.join('-'));
+// expected output: "Fire-Air-Water
+join() 方法将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串。
+如果数组只有一个项目，那么将返回该项目而不使用分隔符。
+
+
+replace()  常用来替换符号
+replace(要被替换的符号或者值,要替换的新符号或值) 用来替换文本符号或者值
+replace("=",":")

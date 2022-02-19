@@ -1,0 +1,25 @@
+{
+  "name": "zypitheima", 
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+{
+  "name": 包的名称, 
+  "version": 包的版本号,
+  "description": 包的简短信息描述,
+  "main": 包的入口文件,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": npm官网搜索关键字,
+  "author": "",
+  "license": 开源许可协议
+}
