@@ -20,3 +20,39 @@
 -- 注意 ： 如果不加where 条件 会导误删整张表的数据！ 一定要慎重！
 -- delete from users where id=4
 select * from users
+
+-- 查询状态为1的所有用户
+-- select * from users where status=1
+
+-- 查询id大于2的所有用户
+-- select * from users where id>2
+
+-- 查询用户名不等于 xh 的所有用户
+-- select * from users where username<>'xh'
+
+-- 使用and来显示所有状态为0，并且id小于3的用户
+-- select * from users where status=0 and id<=3
+
+-- 使用or来显示 所有状态为1，或者username为z3的用户
+-- select * from users where status=1 or username='z3'
+
+-- order by 子句排序
+-- order by 子句默认进行升序排序
+-- 其中 asc 关键字代表升序排序
+-- 按照状态进行升序排序
+-- select * from users order by status asc
+
+-- 其中 desc 关键字代表降序排序
+-- 对users 表中的字段按照 id 进行降序排序
+-- select * from users order by id desc
+
+-- 对users表中的数据先对 status 进行降序排序 ， 再对 username 进行升序排序alter
+-- select * from users order by status desc, username asc
+
+-- 用count(*)返回查询结果的总条数
+-- select count(*) from users where status=0
+-- 给查询到的结果赋值新的名字
+-- select count(*) as totle from users where status=0
+
+-- 使用as 为列设置别名
+-- select username as uname, password as upwd from users
